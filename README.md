@@ -36,8 +36,7 @@ O sistema foi construído com foco na gestão de dados agrícolas, abrangendo fu
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - **assets**: Contém imagens e outros arquivos de mídia não estruturados relacionados ao projeto.
-- **src**: Todo o código-fonte criado para o desenvolvimento do sistema, incluindo scripts de coleta de dados e gerenciamento das culturas.
-- **mer**: Diretório que contém o arquivo do Modelo Entidade Relacionamento (MER) e o Diagrama Entidade Relacionamento (DER), gerados pela ferramenta **SQLModeler**.
+- **mer**: Diretório que contém o arquivo do Modelo Entidade Relacionamento (MER), Diagrama Entidade Relacionamento (DER) e o arquivo de Definição de Dados (DDL), gerados pela ferramenta **Oracle SQL Developer Data Modeler**.
 - **README.md**: Arquivo de guia e explicação geral sobre o projeto (este que você está lendo agora).
 
 

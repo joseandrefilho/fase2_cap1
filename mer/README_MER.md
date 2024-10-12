@@ -7,66 +7,66 @@
 
 <br>
 
-# Modelo Entidade-Relacionamento (MER) e Diagrama Entidade-Relacionamento (DER)
+# Modelagem de Banco de Dados: MER, DER e Script DDL para Sistema de Sensoriamento Agrícola
 
 ## Descrição
 
-Esta pasta contém os arquivos do **Modelo Entidade Relacionamento (MER)** e o **Diagrama Entidade Relacionamento (DER)** do sistema de sensoriamento agrícola **FarmTech Solutions**. O MER e DER foram gerados utilizando a ferramenta **SQLModeler** e refletem a estrutura e os relacionamentos das entidades que compõem o banco de dados.
+Este repositório contém os arquivos do **Modelo Entidade-Relacionamento (MER)**, o **Diagrama Entidade-Relacionamento (DER)**, e o **Script DDL** do sistema de sensoriamento agrícola **FarmTech Solutions**. O MER, DER e o Script DDL foram gerados utilizando as ferramentas **Oracle SQL Developer Data Modeler** e **SQLModeler**, refletindo a estrutura e os relacionamentos das entidades do banco de dados.
 
-O objetivo do MER/DER é modelar de forma clara as entidades envolvidas no processo de coleta de dados de sensores agrícolas e a gestão das culturas, assim como os relacionamentos entre essas entidades.
+O objetivo do MER/DER é modelar de forma clara as entidades envolvidas no processo de coleta de dados de sensores agrícolas, bem como na gestão das culturas e dos insumos aplicados, e o **Script DDL** foi incluído para facilitar a criação das tabelas no banco de dados.
 
 ### Entidades e Atributos:
 
-#### 1. **T_CULTURA**
+#### 1. **CULTURA**
    - **Descrição**: Armazena informações sobre as culturas plantadas.
    - **Campos**:
      - `cd_cultura` (INT, Primary Key) — Código único da cultura.
-     - `nm_cultura` (VARCHAR(100)) — Nome da cultura.
-     - `dt_plantio` (DATETIME) — Data de plantio da cultura.
+     - `nm_cultura` (VARCHAR(100)) — Nome da cultura (deve ser único, constraint UNIQUE).
+     - `dt_plantio` (DATETIME) — Data de plantio da cultura (opcional).
      - `vl_area_cultivo` (DECIMAL(10,2)) — Área de cultivo.
 
-#### 2. **T_SENSOR**
+#### 2. **SENSOR**
    - **Descrição**: Armazena informações sobre os sensores utilizados para monitoramento das condições do solo.
    - **Campos**:
      - `cd_sensor` (INT, Primary Key) — Código único do sensor.
      - `ds_tipo_sensor` (VARCHAR(50)) — Tipo do sensor (umidade, pH, nutrientes).
-     - `vl_latitude_sensor` (DECIMAL(9,6)) — Latitude da localização do sensor.
-     - `vl_longitude_sensor` (DECIMAL(9,6)) — Longitude da localização do sensor.
+     - `vl_latitude_sensor` (DECIMAL(9,6)) — Latitude da localização do sensor (constraint CHECK: deve estar entre -90 e 90).
+     - `vl_longitude_sensor` (DECIMAL(9,6)) — Longitude da localização do sensor (constraint CHECK: deve estar entre -180 e 180).
      - `cd_cultura` (INT, Foreign Key) — Referencia a cultura monitorada pelo sensor.
 
-#### 3. **T_LEITURA**
+#### 3. **LEITURA**
    - **Descrição**: Armazena as leituras realizadas pelos sensores.
    - **Campos**:
      - `cd_leitura` (INT, Primary Key) — Código único da leitura.
-     - `dt_leitura` (DATETIME) — Data e hora da leitura.
+     - `dt_leitura` (DATETIME) — Data e hora da leitura (constraint DEFAULT: valor padrão é `CURRENT_TIMESTAMP`).
      - `vl_valor_leitura` (DECIMAL(10,2)) — Valor da leitura (umidade, pH, nutrientes).
      - `cd_sensor` (INT, Foreign Key) — Referencia o sensor que realizou a leitura.
 
-#### 4. **T_ALERTAS**
+#### 4. **ALERTAS**
    - **Descrição**: Armazena os alertas gerados com base nas leituras dos sensores.
    - **Campos**:
      - `cd_alerta` (INT, Primary Key) — Código único do alerta.
-     - `ds_tipo_alerta` (VARCHAR(100)) — Tipo de alerta (umidade baixa, pH fora do normal).
+     - `ds_tipo_alerta` (VARCHAR(100)) — Tipo de alerta (ex: umidade baixa, pH fora do normal).
      - `dt_alerta` (DATETIME) — Data e hora do alerta.
      - `cd_sensor` (INT, Foreign Key) — Referencia o sensor que gerou o alerta.
 
-#### 5. **T_TIPO_PRODUTO**
+#### 5. **TIPO_PRODUTO**
    - **Descrição**: Armazena os tipos de produtos aplicados nas culturas, como fertilizantes, pesticidas e água.
    - **Campos**:
      - `cd_tipo_produto` (INT, Primary Key) — Código único do tipo de produto.
      - `ds_tipo_produto` (VARCHAR(100)) — Descrição do tipo de produto.
      - `ds_unidade_medida` (VARCHAR(20)) — Unidade de medida padrão (litros, quilos, etc.).
 
-#### 6. **T_APLICACAO**
+#### 6. **APLICACAO**
    - **Descrição**: Armazena informações sobre as aplicações de produtos nas culturas.
    - **Campos**:
      - `cd_aplicacao` (INT, Primary Key) — Código único da aplicação.
      - `dt_aplicacao` (DATETIME) — Data e hora da aplicação.
-     - `vl_quantidade_aplicada` (DECIMAL(10,2)) — Quantidade aplicada.
+     - `vl_quantidade_aplicada` (DECIMAL(10,2)) — Quantidade aplicada (constraint CHECK: deve ser maior que 0).
      - `cd_cultura` (INT, Foreign Key) — Referencia a cultura que recebeu a aplicação.
      - `cd_tipo_produto` (INT, Foreign Key) — Referencia o tipo de produto aplicado.
 
-#### 7. **T_IRRIGACAO**
+#### 7. **IRRIGACAO**
    - **Descrição**: Armazena os eventos de irrigação das culturas.
    - **Campos**:
      - `cd_irrigacao` (INT, Primary Key) — Código único da irrigação.
@@ -142,19 +142,25 @@ O objetivo do MER/DER é modelar de forma clara as entidades envolvidas no proce
 ## Estrutura de Arquivos
 
 Nesta pasta, você encontrará os seguintes arquivos:
-- **MER.sql**: Script SQL contendo a estrutura do banco de dados com as entidades e seus relacionamentos.
-- **DER.png**: Imagem representando o Diagrama Entidade Relacionamento (DER) gerado pelo **SQLModeler**.
-- **MER.pdf**: Documento PDF gerado pelo SQLModeler com o diagrama detalhado do MER.
+- **FarmTech_SCRIPT_DDL.sql**: Script SQL gerado pelo **Oracle SQL Developer Data Modeler** contendo a criação das tabelas e seus relacionamentos.
+- **FarmTech_DER_OracleSQLDeveloperDataModeler.png**: Imagem do Diagrama Entidade-Relacionamento (DER) gerado pelo **Oracle SQL Developer Data Modeler**.
+- **FarmTech_DER_OracleSQLDeveloperDataModeler.pdf**: Documento PDF com o DER detalhado.
+- **FarmTech_MER_OracleSQLDeveloperDataModeler.png**: Imagem do Modelo Entidade-Relacionamento (MER).
+- **FarmTech_MER_OracleSQLDeveloperDataModeler.pdf**: Documento PDF com o MER detalhado.
+- **FarmTech_MER_WWWSQLDESIGNER.xml**: Arquivo XML gerado pelo **SQLModeler** com o diagrama do MER.
+- **FarmTech_MER_WWWSQLDESIGNER.png**: Imagem do MER gerado pelo **SQLModeler**.
+
   
 ## Instruções para Uso
 
-1. O arquivo **MER.sql** pode ser utilizado para criar as tabelas no banco de dados. Basta executá-lo no sistema de gerenciamento de banco de dados que você estiver utilizando (MySQL, Oracle, etc.).
+1. O arquivo **FarmTech_SCRIPT_DDL.sql** pode ser utilizado para criar as tabelas no banco de dados. Execute-o em seu SGBD (MySQL, Oracle, etc.) para implementar o modelo.
    
-2. A imagem **DER.png** fornece uma visualização gráfica dos relacionamentos entre as entidades, sendo uma representação visual do modelo implementado no banco de dados.
+2. As imagens **FarmTech_DER** e **FarmTech_MER** fornecem uma visualização gráfica dos relacionamentos e entidades no sistema.
 
-3. O arquivo **MER.pdf** é uma versão detalhada do modelo de entidade-relacionamento, que pode ser usado para consulta durante o desenvolvimento do sistema.
+3. Os PDFs gerados contêm uma visão detalhada do MER e DER, úteis para consulta durante o desenvolvimento do sistema.
 
-## Ferramenta Utilizada
 
-- **SQLModeler**: Ferramenta utilizada para a criação do MER e DER. Você pode acessar mais informações sobre o SQLModeler em [SQLModeler GitHub](https://github.com/ondras/wwwsqldesigner).
+## Ferramentas Utilizadas
 
+- **Oracle SQL Developer Data Modeler**: Ferramenta usada para criar o MER e o DER, com mais informações disponíveis em [Oracle SQL Developer Data Modeler](https://www.oracle.com/br/database/sqldeveloper/technologies/sql-data-modeler/).
+- **SQLModeler**: Utilizado para a modelagem inicial do MER. Mais detalhes podem ser encontrados no [SQLModeler GitHub](https://github.com/ondras/wwwsqldesigner).
