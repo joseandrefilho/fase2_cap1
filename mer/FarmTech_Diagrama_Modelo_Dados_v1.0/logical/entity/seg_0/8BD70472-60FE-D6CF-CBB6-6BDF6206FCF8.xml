@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BD70472-60FE-D6CF-CBB6-6BDF6206FCF8" name="T_LEITURA">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:36:53 UTC</createdTime>
+<comment><![CDATA[Armazena as leituras realizadas pelos sensores.]]></comment>
+<commentInRDBMS><![CDATA[Armazena as leituras realizadas pelos sensores.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_leitura" id="50E85D0B-5DEC-61C5-651D-4495D46168A5">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:37:09 UTC</createdTime>
+<comment><![CDATA[Código único da leitura.]]></comment>
+<commentInRDBMS><![CDATA[Código único da leitura.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_leitura" id="752D763D-50F7-3DE5-E299-12F5129A8B6C">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:37:21 UTC</createdTime>
+<comment><![CDATA[Referencia o sensor que realizou a leitura.]]></comment>
+<commentInRDBMS><![CDATA[Data e hora da leitura.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_valor_leitura" id="D9C3D4D9-FFE7-8BA9-1FDF-E84E75C89F05">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:37:30 UTC</createdTime>
+<comment><![CDATA[Valor da leitura (umidade, pH, nutrientes).]]></comment>
+<commentInRDBMS><![CDATA[Valor da leitura (umidade, pH, nutrientes).]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_sensor" id="B57DCFD8-F10F-8A02-1E7C-8C533438FAB5">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:48:15 UTC</createdTime>
+<comment><![CDATA[Referencia o sensor que realizou a leitura.]]></comment>
+<commentInRDBMS><![CDATA[Referencia o sensor que realizou a leitura.]]></commentInRDBMS>
+<generatorID>8C6C77FC-2144-41F9-05A2-01858D1B4197</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<referedAttribute>5AF43BA3-FC59-7666-5FEE-88EA943A87F6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9AB4F52E-39D6-4A56-7B44-A2D1EB5FE76E" name="PK_T_LEITURA">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:37:10 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>50E85D0B-5DEC-61C5-651D-4495D46168A5</attributeRef>
+<attributeRef>B57DCFD8-F10F-8A02-1E7C-8C533438FAB5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

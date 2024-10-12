@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1E26ABBB-3E4A-106B-472B-4E2837344935" name="T_ALERTAS">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:39:47 UTC</createdTime>
+<comment><![CDATA[Armazena os alertas gerados com base nas leituras dos sensores.]]></comment>
+<commentInRDBMS><![CDATA[Armazena os alertas gerados com base nas leituras dos sensores.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_alerta" id="E027E1F1-DFC6-D043-03BE-D5A52A76D884">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:39:54 UTC</createdTime>
+<comment><![CDATA[Código único do alerta.]]></comment>
+<commentInRDBMS><![CDATA[Código único do alerta.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_tipo" id="76E4C525-7C41-AEC5-BCAF-A06154953325">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:39:59 UTC</createdTime>
+<comment><![CDATA[Tipo de alerta (umidade baixa, pH fora do normal).]]></comment>
+<commentInRDBMS><![CDATA[Tipo de alerta (umidade baixa, pH fora do normal).]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_alerta" id="1C6FE21B-F841-5D5A-EC00-554148D846AE">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:40:11 UTC</createdTime>
+<comment><![CDATA[Data e hora do alerta.]]></comment>
+<commentInRDBMS><![CDATA[Data e hora do alerta.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_sensor" id="F469C498-8757-7866-C521-A9DB14D81B9F">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:55:02 UTC</createdTime>
+<comment><![CDATA[Referencia o sensor que gerou o alerta.]]></comment>
+<commentInRDBMS><![CDATA[Referencia o sensor que gerou o alerta.]]></commentInRDBMS>
+<generatorID>401F6ED1-CA43-A547-0039-DDBFCDBE5085</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<referedAttribute>5AF43BA3-FC59-7666-5FEE-88EA943A87F6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="29614DB9-5686-9DE2-E19A-27D688458CD4" name="PK_T_ALERTAS">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:39:55 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E027E1F1-DFC6-D043-03BE-D5A52A76D884</attributeRef>
+<attributeRef>F469C498-8757-7866-C521-A9DB14D81B9F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

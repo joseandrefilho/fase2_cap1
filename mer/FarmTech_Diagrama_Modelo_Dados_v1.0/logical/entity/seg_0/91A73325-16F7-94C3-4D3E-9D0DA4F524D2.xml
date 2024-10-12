@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91A73325-16F7-94C3-4D3E-9D0DA4F524D2" name="T_SENSOR">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:35:42 UTC</createdTime>
+<comment><![CDATA[Armazena informações sobre os sensores utilizados para monitoramento das condições do solo.]]></comment>
+<commentInRDBMS><![CDATA[Armazena informações sobre os sensores utilizados para monitoramento das condições do solo.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_sensor" id="5AF43BA3-FC59-7666-5FEE-88EA943A87F6">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:36:01 UTC</createdTime>
+<comment><![CDATA[Código único do sensor.]]></comment>
+<commentInRDBMS><![CDATA[Código único do sensor.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_tipo_sensor" id="302A2280-C483-B8FE-14F5-D761E6EB5825">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:36:31 UTC</createdTime>
+<comment><![CDATA[Tipo do sensor (umidade, pH, nutrientes).]]></comment>
+<commentInRDBMS><![CDATA[Tipo do sensor (umidade, pH, nutrientes).]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_latitude_sensor" id="52430E2E-42AC-22CE-D5CA-9D1F34D0D2F2">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:36:36 UTC</createdTime>
+<comment><![CDATA[Latitude da localização do sensor.]]></comment>
+<commentInRDBMS><![CDATA[Latitude da localização do sensor.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>6</dataTypeScale>
+<ownDataTypeParameters>,9,6</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_longitude_sensor" id="C7118965-80C3-2D44-D90B-B588274B51F6">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:58:51 UTC</createdTime>
+<comment><![CDATA[Longitude da localização do sensor.]]></comment>
+<commentInRDBMS><![CDATA[Longitude da localização do sensor.]]></commentInRDBMS>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>6</dataTypeScale>
+<ownDataTypeParameters>,9,6</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_cultura" id="6E8520A2-19EA-61A8-623F-985150BD2F0E">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:53:54 UTC</createdTime>
+<comment><![CDATA[Referencia a cultura monitorada pelo sensor.]]></comment>
+<commentInRDBMS><![CDATA[Referencia a cultura monitorada pelo sensor.]]></commentInRDBMS>
+<generatorID>C2C014C1-2537-00BC-A988-96BFF9D00330</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<referedAttribute>99507CE9-4CC6-E034-1BC4-ACF9222B1C38</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE73812E-AADD-24F3-479E-E009D684DE90" name="PK_T_SENSOR">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:36:11 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5AF43BA3-FC59-7666-5FEE-88EA943A87F6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

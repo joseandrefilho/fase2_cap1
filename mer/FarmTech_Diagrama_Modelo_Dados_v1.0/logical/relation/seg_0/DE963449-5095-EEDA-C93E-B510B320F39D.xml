@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="IRRIGA" directorySegmentName="seg_0" id="DE963449-5095-EEDA-C93E-B510B320F39D">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 18:00:54 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<sourcePk>8DB9D357-3923-91A6-EF39-E79EAEC2DEFF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7D476DC2-DFB1-B7BC-CB5B-BD41685BE22D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D4BEDBA6-0090-BF8E-53C1-E61C463A67CE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RECEBE" directorySegmentName="seg_0" id="891215B0-F709-E3D1-6E7C-3F3638626F96">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 18:00:36 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<sourcePk>8DB9D357-3923-91A6-EF39-E79EAEC2DEFF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7D476DC2-DFB1-B7BC-CB5B-BD41685BE22D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B0F9514F-12D4-3A13-5651-F3EAAE28D73A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

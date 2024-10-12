@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="62F96A67-0CB5-F868-0B0D-401FF839C9DB" name="T_IRRIGACAO">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Armazena os eventos de irrigação das culturas.]]></comment>
+<commentInRDBMS><![CDATA[Armazena os eventos de irrigação das culturas.]]></commentInRDBMS>
+<generatorID>D4BEDBA6-0090-BF8E-53C1-E61C463A67CE</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_irrigacao" id="B2D88BC1-3951-7B5B-DA83-E9A23DE7F794">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Código único da irrigação.]]></comment>
+<commentInRDBMS><![CDATA[Código único da irrigação.]]></commentInRDBMS>
+<generatorID>B6616DB9-72E4-6937-B13D-EBCA7A464CA2</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_irrigacao" id="346E5416-0D36-2A4B-EFA9-428F9F2E87E1">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Data e hora da irrigação.]]></comment>
+<commentInRDBMS><![CDATA[Data e hora da irrigação.]]></commentInRDBMS>
+<generatorID>057572AE-CC78-9EAC-A3B6-7AB192399871</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_quantidade_agua_aplicada" id="415B8594-B422-0F6C-07A9-0BA17C549422">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Quantidade de água aplicada.]]></comment>
+<commentInRDBMS><![CDATA[Quantidade de água aplicada.]]></commentInRDBMS>
+<generatorID>00E79EB0-1F3C-6643-13F8-1F6375C610E1</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_cultura" id="93229733-C7F7-8E5F-7B38-71F7E87CDE1B">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Referencia a cultura irrigada.]]></comment>
+<commentInRDBMS><![CDATA[Referencia a cultura irrigada.]]></commentInRDBMS>
+<generatorID>DD8BDCDD-9287-E449-A8B6-F105DAD84659</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FE74893-3D4C-F7E5-9223-DF4E798C3595" referredColumn="8EC383E8-EF2D-F1D0-EBDD-AFBC28271E9B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA95B47C-DAF8-789B-DEAF-83D4F7853B12" name="PK_T_IRRIGACAO">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<generatorID>FB9AA153-A34E-6D72-A4AC-54F4FD896462</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2D88BC1-3951-7B5B-DA83-E9A23DE7F794"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D947118D-2921-6ECB-D7F9-BBCA992C03F7" name="FK_T_IRRIGACAO_T_CULTURA">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<generatorID>DE963449-5095-EEDA-C93E-B510B320F39D</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93229733-C7F7-8E5F-7B38-71F7E87CDE1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="REALIZA" directorySegmentName="seg_0" id="8C6C77FC-2144-41F9-05A2-01858D1B4197">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:48:15 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<engineerTo>
+<item key="234BB721-2EE4-C2D4-29EC-C172B718158B" value="true"/>
+</engineerTo>
+<sourcePk>DE73812E-AADD-24F3-479E-E009D684DE90</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>91A73325-16F7-94C3-4D3E-9D0DA4F524D2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8BD70472-60FE-D6CF-CBB6-6BDF6206FCF8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0B8A32C3-1C6B-695F-8581-DE691BE40FD5" name="T_APLICACAO">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Armazena informações sobre as aplicações de produtos nas culturas.]]></comment>
+<commentInRDBMS><![CDATA[Armazena informações sobre as aplicações de produtos nas culturas.]]></commentInRDBMS>
+<generatorID>B0F9514F-12D4-3A13-5651-F3EAAE28D73A</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_aplicacao" id="1C101949-2332-00CF-C242-DFAD22ACCDE1">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Código único da aplicação.]]></comment>
+<commentInRDBMS><![CDATA[Código único da aplicação.]]></commentInRDBMS>
+<generatorID>9D9E437D-F018-C1C5-8826-C2420FE85CDB</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_aplicacao" id="89A9F94F-5399-D6B6-5C5B-5424093A4B75">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Data e hora da aplicação.]]></comment>
+<commentInRDBMS><![CDATA[Data e hora da aplicação.]]></commentInRDBMS>
+<generatorID>AE3C89D5-D943-A120-6462-3DAF94353A64</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_quantidade_aplicada" id="6BF9835C-E753-1120-BA70-BF402F17E7B7">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Quantidade aplicada.]]></comment>
+<commentInRDBMS><![CDATA[Quantidade aplicada.]]></commentInRDBMS>
+<generatorID>9A7B922E-817F-6110-CCBD-AE2A5465AE1E</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="vl_quantidade_aplicada &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_cultura" id="79273BCD-800E-034E-FE99-119D11024E41">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Referencia a cultura que recebeu a aplicação.]]></comment>
+<commentInRDBMS><![CDATA[Referencia a cultura que recebeu a aplicação.]]></commentInRDBMS>
+<generatorID>03C31A57-6BEF-0C2D-CEB6-B3697ABF8FFE</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3484834C-4376-2A65-9594-6B2B09C16412" referredColumn="8EC383E8-EF2D-F1D0-EBDD-AFBC28271E9B"/>
+</associations>
+</Column>
+<Column name="cd_tipo_produto" id="F50C1A5C-FA5B-36F4-883A-BDBC992ED81C">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<comment><![CDATA[Referencia o tipo de produto aplicado.]]></comment>
+<commentInRDBMS><![CDATA[Referencia o tipo de produto aplicado.]]></commentInRDBMS>
+<generatorID>A89BF86C-EEB6-E0A5-49F5-416D038E7924</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9D93A172-FB04-B879-56B6-A5A2D0A8DD89" referredColumn="48FC03F7-B75C-B374-4CC8-6C3426B18C5E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2603CD7D-7E8F-C8A6-1484-240643F8A382" name="PK_T_APLICACAO">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<generatorID>6CAC8EFB-1EB9-6E49-77A9-4DEEE42BE618</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C101949-2332-00CF-C242-DFAD22ACCDE1"/>
+<colUsage columnID="F50C1A5C-FA5B-36F4-883A-BDBC992ED81C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="86D27FFB-545A-96E4-3A28-ED2DC39DF97D" name="FK_T_APLICACAO_T_TIPO_PRODUTO">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<generatorID>08B62A06-B4E5-D08C-A95D-ADA9B4AE9727</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F50C1A5C-FA5B-36F4-883A-BDBC992ED81C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC9C2A38-5029-1DA5-50A1-0F6593756DCF" name="FK_T_APLICACAO_T_CULTURA">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:45:10 UTC</createdTime>
+<generatorID>891215B0-F709-E3D1-6E7C-3F3638626F96</generatorID>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="79273BCD-800E-034E-FE99-119D11024E41"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_APLICACAO_QTDE" directorySegmentName="seg_0" id="FF91EE5B-016E-159D-9622-DD0066F7735F">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 20:51:36 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<rule><![CDATA[vl_quantidade_aplicada > 0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
