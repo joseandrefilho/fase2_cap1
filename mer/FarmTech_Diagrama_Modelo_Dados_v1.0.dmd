@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="FarmTech_Diagrama_Modelo_Dados_v1.0" id="63AEDD70-07E4-DC46-31F2-5825FF2EE159" version="3.5">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:04:10 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>63AEDD70-07E4-DC46-31F2-5825FF2EE159</designId>
+</OSDM_Design>

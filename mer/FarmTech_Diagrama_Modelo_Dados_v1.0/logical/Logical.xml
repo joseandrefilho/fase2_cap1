@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="33BB07FC-3C72-7B9D-967A-141645FD66D2" mainViewID="3B544017-43A2-9101-36D7-9838D65401D4">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:04:10 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

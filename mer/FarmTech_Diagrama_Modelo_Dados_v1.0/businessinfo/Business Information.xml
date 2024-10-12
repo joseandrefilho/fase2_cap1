@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="A24B294A-FD40-9444-C07E-80185526BE75">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:04:10 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

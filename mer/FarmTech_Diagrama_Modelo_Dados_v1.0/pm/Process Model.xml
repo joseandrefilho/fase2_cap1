@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="85281A43-BE70-1AB2-80AA-AB917F641D3C">
+<createdBy>josea</createdBy>
+<createdTime>2024-10-12 17:04:10 UTC</createdTime>
+<ownerDesignName>FarmTech_Diagrama_Modelo_Dados_v1.0</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>
