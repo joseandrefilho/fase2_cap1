@@ -1,0 +1,8 @@
+# Oracle SQL Modeler Project
+FarmTech_Diagrama_Modelo_Dados_v1.0/
+**/*.dmd
+
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://127.0.0.1:8080/wwwsqldesigner/ -->
+<sql>
+    <datatypes db="mysql">
+        <group label="Numeric" color="rgb(238,238,170)">
+            <type label="Integer" length="0" sql="INTEGER" quote="" />
+            <type label="TINYINT" length="0" sql="TINYINT" quote="" />
+            <type label="SMALLINT" length="0" sql="SMALLINT" quote="" />
+            <type label="MEDIUMINT" length="0" sql="MEDIUMINT" quote="" />
+            <type label="INT" length="0" sql="INT" quote="" />
+            <type label="BIGINT" length="0" sql="BIGINT" quote="" />
+            <type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote="" />
+            <type label="Single precision" length="0" sql="FLOAT" quote="" />
+            <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote="" />
+        </group>
+
+        <group label="Character" color="rgb(255,200,200)">
+            <type label="Char" length="1" sql="CHAR" quote="'" />
+            <type label="Varchar" length="1" sql="VARCHAR" quote="'" />
+            <type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'" />
+            <type label="Binary" length="1" sql="BINARY" quote="'" />
+            <type label="Varbinary" length="1" sql="VARBINARY" quote="'" />
+            <type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'" />
+        </group>
+
+        <group label="Date &amp; Time" color="rgb(200,255,200)">
+            <type label="Date" length="0" sql="DATE" quote="'" />
+            <type label="Time" length="0" sql="TIME" quote="'" />
+            <type label="Datetime" length="0" sql="DATETIME" quote="'" />
+            <type label="Year" length="0" sql="YEAR" quote="" />
+            <type label="Timestamp" length="0" sql="TIMESTAMP" quote="'" />
+        </group>
+
+        <group label="Miscellaneous" color="rgb(200,200,255)">
+            <type label="ENUM" length="1" sql="ENUM" quote="" />
+            <type label="SET" length="1" sql="SET" quote="" />
+            <type label="Bit" length="0" sql="bit" quote="" />
+        </group>
+    </datatypes>
+    <table x="539" y="84" name="T_SENSOR">
+        <row name="cd_sensor" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único do sensor.</comment>
+        </row>
+        <row name="ds_tipo_sensor" null="0" autoincrement="0">
+            <datatype>VARCHAR(50)</datatype>
+            <default>'NULL'</default>
+            <comment>Tipo do sensor (umidade, pH, nutrientes).</comment>
+        </row>
+        <row name="vl_latitude_sensor" null="0" autoincrement="0">
+            <datatype>DECIMAL</datatype>
+            <default>NULL</default>
+            <comment>Latitude da localização do sensor.</comment>
+        </row>
+        <row name="vl_longitude_sensor" null="0" autoincrement="0">
+            <datatype>DECIMAL(9,6)</datatype>
+            <default>NULL</default>
+            <comment>Longitude da localização do sensor.</comment>
+        </row>
+        <row name="cd_cultura" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_CULTURA" row="cd_cultura" />
+            <comment>Referencia a cultura monitorada pelo sensor.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_sensor</part>
+        </key>
+        <comment>Armazena informações sobre os sensores utilizados para monitoramento das condições
+            do solo.</comment>
+    </table>
+    <table x="197" y="332" name="T_CULTURA">
+        <row name="cd_cultura" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único da cultura.</comment>
+        </row>
+        <row name="nm_cultura" null="0" autoincrement="0">
+            <datatype>VARCHAR(100)</datatype>
+            <default>'NULL'</default>
+            <comment>Nome da cultura.</comment>
+        </row>
+        <row name="dt_plantio" null="1" autoincrement="0">
+            <datatype>DATETIME</datatype>
+            <default>NULL</default>
+            <comment>Data de plantio da cultura.</comment>
+        </row>
+        <row name="vl_area_cultivo" null="1" autoincrement="0">
+            <datatype>DECIMAL(10,2)</datatype>
+            <default>NULL</default>
+            <comment>Área de cultivo.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_cultura</part>
+        </key>
+        <comment>Armazena informações sobre as culturas plantadas</comment>
+    </table>
+    <table x="964" y="33" name="T_ALERTAS">
+        <row name="cd_alerta" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único do alerta.</comment>
+        </row>
+        <row name="ds_tipo" null="0" autoincrement="0">
+            <datatype>VARCHAR(100)</datatype>
+            <default>'NULL'</default>
+            <comment>Tipo de alerta (umidade baixa, pH fora do normal).</comment>
+        </row>
+        <row name="dt_alerta" null="0" autoincrement="0">
+            <datatype>DATETIME</datatype>
+            <default>'NULL'</default>
+            <comment>Data e hora do alerta.</comment>
+        </row>
+        <row name="cd_sensor_T_SENSOR" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_SENSOR" row="cd_sensor" />
+            <comment>Código único do sensor.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_alerta</part>
+        </key>
+        <comment>Armazena os alertas gerados com base nas leituras dos sensores.</comment>
+    </table>
+    <table x="978" y="211" name="T_LEITURA">
+        <row name="cd_leitura" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único da leitura.</comment>
+        </row>
+        <row name="dt_leitura" null="0" autoincrement="0">
+            <datatype>DATETIME</datatype>
+            <default>'NULL'</default>
+            <comment>Data e hora da leitura.</comment>
+        </row>
+        <row name="vl_valor_leitura" null="0" autoincrement="0">
+            <datatype>DECIMAL(10,2)</datatype>
+            <default>NULL</default>
+            <comment>Valor da leitura (umidade, pH, nutrientes).</comment>
+        </row>
+        <row name="cd_sensor" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_SENSOR" row="cd_sensor" />
+            <comment>Referencia o sensor que realizou a leitura.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_leitura</part>
+        </key>
+        <comment>Armazena as leituras realizadas pelos sensores.</comment>
+    </table>
+    <table x="541" y="716" name="T_IRRIGACAO">
+        <row name="cd_irrigacao" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único da irrigação.</comment>
+        </row>
+        <row name="dt_irrigacao" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Data e hora da irrigação.</comment>
+        </row>
+        <row name="vl_quantidade_agua_aplicada" null="0" autoincrement="0">
+            <datatype>DECIMAL(10,2)</datatype>
+            <default>NULL</default>
+            <comment>Quantidade de água aplicada.</comment>
+        </row>
+        <row name="cd_cultura" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_CULTURA" row="cd_cultura" />
+            <comment>Referencia a cultura irrigada.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_irrigacao</part>
+        </key>
+        <comment>Armazena os eventos de irrigação das culturas.</comment>
+    </table>
+    <table x="601" y="419" name="T_APLICACAO">
+        <row name="cd_aplicacao" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único da aplicação.</comment>
+        </row>
+        <row name="dt_aplicacao" null="1" autoincrement="0">
+            <datatype>DATETIME</datatype>
+            <default>NULL</default>
+            <comment>Data e hora da aplicação.</comment>
+        </row>
+        <row name="vl_quantidade_aplicada" null="0" autoincrement="0">
+            <datatype>DECIMAL(10,2)</datatype>
+            <default>NULL</default>
+            <comment>Quantidade aplicada.</comment>
+        </row>
+        <row name="cd_cultura" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_CULTURA" row="cd_cultura" />
+            <comment>Referencia a cultura que recebeu a aplicação.</comment>
+        </row>
+        <row name="cd_tipo_produto" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <relation table="T_TIPO_PRODUTO" row="cd_tipo_produto" />
+            <comment>Referencia o tipo de produto aplicado.</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_aplicacao</part>
+        </key>
+        <comment>Armazena informações sobre as aplicações de produtos nas culturas.</comment>
+    </table>
+    <table x="1015" y="406" name="T_TIPO_PRODUTO">
+        <row name="cd_tipo_produto" null="0" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default>
+            <comment>Código único do tipo de produto.</comment>
+        </row>
+        <row name="ds_tipo_produto" null="0" autoincrement="0">
+            <datatype>VARCHAR(100)</datatype>
+            <default>'NULL'</default>
+            <comment>Descrição do tipo de produto.</comment>
+        </row>
+        <row name="ds_unidade_medida" null="0" autoincrement="0">
+            <datatype>VARCHAR(20)</datatype>
+            <default>'NULL'</default>
+            <comment>Unidade de medida padrão (litros, quilos, etc.).</comment>
+        </row>
+        <key type="PRIMARY" name="">
+            <part>cd_tipo_produto</part>
+        </key>
+        <comment>Armazena os tipos de produtos aplicados nas culturas, como fertilizantes,
+            pesticidas e água.</comment>
+    </table>
+</sql>
